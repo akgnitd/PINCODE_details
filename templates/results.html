@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>PINCODE DETAILS</h2>
+
+<p>Your Result</p>
+<table>
+  <tbody>
+    {% for i, j in result.items() %}
+      <tr>
+        <td>{{i}}</td>
+        <td>
+          {% if j|check_type == 'list' %}
+            <tr>
+              <th>DIVISION</th>
+              <th>BRANCH TYPE</th>
+              <th>NAME</th>
+              <th>DISTRICT</th>
+              <th>COUNTRY</th>
+              <th>REGION</th>
+              <th>TALUK</th>
+              <th>DELIVERY STATUS</th>
+              <th>STATE</th>
+              <th>CIRCLE</th>
+            </tr>
+            {% for i in j %}
+            <tr>
+              {% for k, l in i.items() %}
+                <td>{{l}}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          {% else %}
+          {{j}}
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
