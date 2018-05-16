@@ -2,6 +2,27 @@
 
 {% block body %}
 
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: green;
+}
+</style>
+</head>
 <h1>DATA FETCH</h1>
 <h2>Welcome to PINCODE details on the web!</h2>
 
@@ -11,7 +32,8 @@
 <tr><td>Number:</td><td><input name='NUMBER' type='number' width='60'></td></tr>
 </table>
 <p>When you're ready, click this button:</p>
-<button type="name">Click Me!</button>
+
+<button class="button">Proceed</button>
 </form>
 
 {% endblock %}
