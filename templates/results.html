@@ -1,42 +1,54 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-<h2>PINCODE DETAILS</h2>
+<center>
+  <h1>RESULT</h1>
+  <h3>PINCODE DETAILS</h3>
 
-<p>Your Result</p>
-<table>
-  <tbody>
-    {% for i, j in result.items() %}
-      <tr>
-        <td>{{i}}</td>
-        <td>
-          {% if j|check_type == 'list' %}
-            <tr>
-              <th>DIVISION</th>
-              <th>BRANCH TYPE</th>
-              <th>NAME</th>
-              <th>DISTRICT</th>
-              <th>COUNTRY</th>
-              <th>REGION</th>
-              <th>TALUK</th>
-              <th>DELIVERY STATUS</th>
-              <th>STATE</th>
-              <th>CIRCLE</th>
-            </tr>
-            {% for i in j %}
-            <tr>
-              {% for k, l in i.items() %}
-                <td>{{l}}</td>
+  <table>
+    <tbody>
+      {% for i, j in result.items() %}
+        <tr>
+          <td>{{i}}</td><br>
+          <td>
+            {% if j|check_type == 'list' %}
+
+              <tr>
+                <th>DIVISION</th>
+                <th>BRANCH TYPE</th>
+                <th>NAME</th>
+                <th>DISTRICT</th>
+                <th>COUNTRY</th>
+                <th>REGION</th>
+                <th>TALUK</th>
+                <th>DELIVERY STATUS</th>
+                <th>STATE</th>
+                <th>CIRCLE</th>
+              </tr>
+
+              {% for i in j %}
+                <tr>
+                  {% for k, l in i.items() %}
+                    <td>{{l}}</td>
+                  {% endfor %}
+                </tr>
               {% endfor %}
-            </tr>
-            {% endfor %}
-          {% else %}
-          {{j}}
-          {% endif %}
-        </td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+              {% else %}
+                {{j}}
+
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</center>
+
 {% endblock %}
