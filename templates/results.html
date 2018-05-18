@@ -17,13 +17,10 @@
     <tbody>
       {% for i, j in result.items() %}
         <tr>
-          <td><h5><b>{{i}}</b></h5></td><br>
-          <td>
+          <br>
             {% if j|check_type == 'list' %}
               <br><br>
-
               <tr>
-
                 <th>DIVISION</th>
                 <th>BRANCH TYPE</th>
                 <th>NAME</th>
@@ -47,7 +44,7 @@
                 {{j}}
 
             {% endif %}
-          </td>
+
         </tr>
       {% endfor %}
     </tbody>
