@@ -7,12 +7,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <center>
-  </div>
   <h1 style="font-family: courier; border: 1px solid powderblue; padding: 30px;">RESULT</h1>
   <h3>PINCODE DETAILS</h3>
-
+</center>
   <table>
     <tbody>
       {% for i, j in result.items() %}
@@ -27,10 +25,10 @@
                 <th>DISTRICT</th>
                 <th>COUNTRY</th>
                 <th>REGION</th>
-                <th>TALUK</th>
+                <th>CIRCLE</th>
                 <th>DELIVERY STATUS</th>
                 <th>STATE</th>
-                <th>CIRCLE</th>
+                <th>TALUK</th>
               </tr>
 
               {% for i in j %}
@@ -41,7 +39,7 @@
                 </tr>
               {% endfor %}
               {% else %}
-                {{j}}
+              <h4><b>{{i}}:</b></h4> {{j}}       <!--i is Status and Message. j is Success and Number of....-->
 
             {% endif %}
 
@@ -60,6 +58,7 @@ th, td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    font-size: 15px;
 }
 tr:hover {
   background-color:#f5f5f5;
