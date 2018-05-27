@@ -15,10 +15,10 @@
     <tbody>
       {% for i, j in result.items() %}
         <tr>
-          <br>
+            <br>
             {% if j|check_type == 'list' %}
-              <br><br>
-              <tr>
+
+              <tr><br>
                 <th>DIVISION</th>
                 <th>BRANCH TYPE</th>
                 <th>NAME</th>
@@ -39,7 +39,7 @@
                 </tr>
               {% endfor %}
               {% else %}
-              <h4><b>{{i}}:</b></h4> {{j}}       <!--i is Status and Message. j is Success and Number of....-->
+                <h4><b>{{i}}:</b></h4> {{j}}       <!--i is Status and Message. j is Success and Number of....-->
 
             {% endif %}
 
@@ -69,12 +69,12 @@ tr:hover {
 <style>
 body {
   margin:0;
-  height:2000px;
+  height:1000px;
 }
 
 .icon-bar {
   position: fixed;
-  top: 50%;
+  top: 22%;
   right: 10px;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
