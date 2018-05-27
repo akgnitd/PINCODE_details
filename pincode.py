@@ -6,10 +6,6 @@ import json
 app = Flask(__name__)
 app.secret_key = 'F12Zr47j\3yX Rsddsdsdsdsd qdcewvcqwraxw evtsdxs rybvsa WRacs atsvgc'
 
-@app.route('/')
-def hello():
-    return 'Hello world from Flask!'
-
 @app.route('/pincode', methods=['POST'])
 def check_for_dnd():
     """
@@ -21,7 +17,7 @@ def check_for_dnd():
     url = 'http://' + host + endpoint + pincode
     return render_template('results.html', result=json.loads(requests.get(url).content))
 
-@app.route('/entry/')
+@app.route('/')
 def entry_page():
     return render_template('entry.html',
                            the_title='Welcome to PIN CODE details on the web!')
