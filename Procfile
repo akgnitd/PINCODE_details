@@ -1,1 +1,1 @@
-web: gunicorn pincode:app --log-file=
+web: gunicorn pincode:app

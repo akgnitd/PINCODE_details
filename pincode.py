@@ -4,12 +4,11 @@ import requests
 import json
 
 app = Flask(__name__)
-app.secret_key = 'F12Zr47j\3yX Rsddsdsdsdsd qdcewvcqwraxw evtsdxs rybvsa WRacs atsvgc'
+app.secret_key = 'F12Zr47j\3yXRsddsdsdsdsqdcewvcqwraxwevtsdxsrybvsaWRacsatsvgc'
 
-
-@app.route('/')
+@app.route('/', methods=['GET'])
 def entry_page():
-    return render_template('entry.html')
+    return render_template('entry.html', the_title='pincode!')
 
 @app.route('/pincode', methods=['POST'])
 def check_for_dnd():
@@ -30,4 +29,4 @@ def check_type(var):
 environment.DEFAULT_FILTERS['check_type'] = check_type
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
