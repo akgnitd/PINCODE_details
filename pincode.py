@@ -4,11 +4,10 @@ import requests
 import json
 
 app = Flask(__name__)
-app.secret_key = 'F12Zr47j\3yXRsddsdsdsdsqdcewvcqwraxwevtsdxsrybvsaWRacsatsvgc'
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def entry_page():
-    return render_template('entry.html', the_title='pincode!')
+    return render_template('entry.html', the_title='Pincode_data')
 
 @app.route('/pincode', methods=['POST'])
 def check_for_dnd():
