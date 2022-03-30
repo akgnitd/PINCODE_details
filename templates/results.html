@@ -19,22 +19,24 @@
             {% if j|check_type == 'list' %}
 
               <tr><br>
-                <th>DIVISION</th>
-                <th>BRANCH TYPE</th>
                 <th>NAME</th>
-                <th>DISTRICT</th>
-                <th>COUNTRY</th>
-                <th>REGION</th>
-                <th>CIRCLE</th>
+                <th>BRANCH TYPE</th>
                 <th>DELIVERY STATUS</th>
+                <th>CIRCLE</th>
+                <th>DISTRICT</th>
+                <th>DIVISION</th>
+                <th>REGION</th>
+                <th>BLOCK</th>
                 <th>STATE</th>
-                <th>TALUK</th>
+                <th>COUNTRY</th>
               </tr>
 
               {% for i in j %}
                 <tr>
                   {% for k, l in i.items() %}
-                    <td>{{l}}</td>
+                    {% if k != 'Description' %} 
+                      <td>{{"NA" if l == '' else l }}</td>
+                    {% endif %}
                   {% endfor %}
                 </tr>
               {% endfor %}
